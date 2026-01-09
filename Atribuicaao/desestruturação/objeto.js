@@ -8,6 +8,6 @@ const person = {
     }
 };
 
-const {address: {street}} = person;
-console.log(street);
+const {address: {street = 'Avenida getulio vargas', number}} = person;
+console.log(street, number);
 
