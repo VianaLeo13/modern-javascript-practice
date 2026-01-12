@@ -30,7 +30,7 @@ switch(diaDaSemana) {
 }   
 }
 
-const data = new Date('1966-09-24 00:00:00');
+const data = new Date('2026-01-11 00:00:00');
 let diaDaSemana = data.getDay();
 const diaSemanaTexto = getDiaSemanaTexto(diaDaSemana);
  console.log(diaDaSemana, diaSemanaTexto);
