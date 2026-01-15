@@ -40,8 +40,8 @@ function criaHoraDosSegundos(segundos){
 
 function iniciaTimer(){
       timer = setInterval(function(){
-          segundos++;
-          relogio.innerHTML = criaHoraDosSegundos(segundos);
+          segundos++; // tive que fazer isso, pois setInterval não incrementa automaticamente ele apenas executa a função a cada intervalo de tempo.
+          relogio.innerHTML = criaHoraDosSegundos(segundos); //Criando HTML! 
       }, 1000);
 
     
