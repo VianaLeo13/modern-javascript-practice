@@ -30,6 +30,7 @@ function criaTarefa(textoInput){
      listaTarefas.appendChild(li);
      limpaInput();
      criaBotaoApagar(li);
+     salvaTarefas();
 }
 input.addEventListener('keypress', function(e){ //keypress serve para detectar quando uma tecla é pressionada
     if(e.keyCode === 13){ //keyCode 13 é o código da tecla Enter
@@ -40,7 +41,7 @@ input.addEventListener('keypress', function(e){ //keypress serve para detectar q
 
 
 btnAdicionar.addEventListener('click', function(e) {
-    if(!input.value) return;
+    if(!input.value) return; //se o input estiver vazio, não faz nada
     criaTarefa(input.value);
 });
 
@@ -48,22 +49,33 @@ document.addEventListener('click', function(e){
     const el = e.target;
     if(el.classList.contains('apagar')){
         el.parentElement.remove(); //parentElement serve para selecionar o elemento pai do botão apagar, que no caso é a li
+        salvaTarefas();
     }
+});
 
- function salvaTarefas(){
-    const liTarefas = listaTarefas.querySelectorAll('li');
-    const listaDeTarefas = [];
+ 
+function salvaTarefas(){     //Função para salvar as tarefas no localStorage
+     const liTarefas = listaTarefas.querySelectorAll('li');
+     const listaDeTarefas = [];
 
-    for(let tarefa of liTarefas){
+     for(let tarefa of liTarefas){
         let tarefaTexto = tarefa.innerText;
-        tarefaTexto = tarefaTexto.replace('Apagar', '').trim(); //remove o texto 'Apagar' e espaços em branco
-        listaDeTarefas.push(tarefaTexto);
-    }
-    
-    const tarefasJSON = JSON.stringify(listaDeTarefas);
-    localStorage.setItem('tarefas', tarefasJSON);
+        tarefaTexto = tarefaTexto.replace('Apagar', '').trim(); //remove a palavra Apagar do texto da tarefa e trim() remove os espaços em branco no início e no final
+        listaDeTarefas.push(tarefaTexto);//adiciona o texto da tarefa no array
+     }
+
+       const tarefasJSON = JSON.stringify(listaDeTarefas);//converte o array em uma string JSON
+       localStorage.setItem('tarefas', tarefasJSON);   
 
 }
-salvaTarefas();
 
-});
+function adicionaTarefasSalvas(){ //Função para adicionar as tarefas salvas no localStorage ao carregar a página 
+    const tarefas = localStorage.getItem('tarefas');//pega as tarefas salvas no localStorage
+    const listaDeTarefas = JSON.parse(tarefas); //converte a string JSON de volta para um array
+
+    for(let tarefa of listaDeTarefas){
+        criaTarefa(tarefa);
+    }
+}
+
+adicionaTarefasSalvas();
