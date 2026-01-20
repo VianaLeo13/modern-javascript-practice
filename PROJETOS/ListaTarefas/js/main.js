@@ -1,3 +1,5 @@
+function rotine(){
+
 const input = document.querySelector('.input-tarefa');
 const btnAdicionar = document.querySelector('.btn-adicionar');
 const listaTarefas = document.querySelector('.tarefas');
@@ -79,3 +81,7 @@ function adicionaTarefasSalvas(){ //Função para adicionar as tarefas salvas no
 }
 
 adicionaTarefasSalvas();
+
+}
+
+rotine();
