@@ -49,21 +49,11 @@ function Calculadora(){
 
        document.addEventListener('click', e =>{
         const el = e.target;
-        if(el.classList.contains('btn-num')){   
-            this.btnParaDisplay(el);
-        };
-        if(el.classList.contains('btn-clear')){
-            this.clearDisplay();
-        };
-        if(el.classList.contains('btn-del')){
-            this.apagarUm();
-        };
-        if(el.classList.contains('btn-eq')){
-            this.calcular();
-        };
-
-
-});
+        if(el.classList.contains('btn-num'))this.btnParaDisplay(el);
+        if(el.classList.contains('btn-clear'))this.clearDisplay();
+        if(el.classList.contains('btn-del'))this.apagarUm();
+        if(el.classList.contains('btn-eq'))this.calcular();
+    });
 };
 
     this.btnParaDisplay = (el) => {
