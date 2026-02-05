@@ -2,7 +2,7 @@
 const fruits = ['apple', 'banana', 'cherry'];
 
 for(let i in fruits){
-    console.log(fruits[i]);
+    console.log(i);
 }
 
 console.log('---');
