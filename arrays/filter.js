@@ -3,7 +3,7 @@
 //retorne os números maiores que 10
 const numeros = [5, 50, 80, 1, 2, 3, 15, 22, 27];
 
-//valor, indice, array no filter
+//valor, indice, array são os parametros do callback da função filter, o valor é o valor do elemento do array, o indice é a posição do elemento no array e o array é o array original que esta sendo filtrado
 
 const numerosFiltrados = numeros.filter(valor => valor > 10);
 //console.log(numerosFiltrados);

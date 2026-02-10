@@ -11,7 +11,7 @@ function Produto(nome, preco, estoque) {
     Object.defineProperties(this,  {
          nome:{
                  enumerable: true, //mostra a chave  quando usar o for in ou o Object.keys
-                value: estoque, //valor da chave 
+                value: nome, //valor da chave 
                 writable: true, //nao permite modificar o valor da chave 
                 configurable: true, //nao permite deletar a chave 
                 
@@ -19,7 +19,7 @@ function Produto(nome, preco, estoque) {
 
          preco:{
                 enumerable: true, //mostra a chave quando usar o for in ou o Object.keys
-                 value: estoque, //valor da chave 
+                value: preco, //valor da chavevalue: estoque, //valor da chave 
                  writable: true, //nao permite modificar o valor da chave 
                 configurable: true, //nao permite deletar a chave 
          }

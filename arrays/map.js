@@ -1,4 +1,4 @@
-
+//map 
 //dobrar os números com map
 const numeros = [5, 50, 80, 1, 2, 3, 15, 22, 27];
 

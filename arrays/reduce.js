@@ -16,7 +16,7 @@ const total = numeros.reduce(function (acumulador, valor) {
 }, 0);
 console.log(total);
 
-
+//acumulador, valor, indice, array são os parametros do callback da função reduce
 
 
 
