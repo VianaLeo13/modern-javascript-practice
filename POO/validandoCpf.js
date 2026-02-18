@@ -60,7 +60,7 @@ class ValindoCpf{
         }, 0);
 
         const digito = 11 - (total % 11);
-        return digito > 9 ? '0' : String(digito);
+        return digito > 9 ? '0' : String(digito); // se o dígito for maior que 9, retorna '0', caso contrário, retorna o dígito convertido para string.
     }
 
     isSequencia(){
