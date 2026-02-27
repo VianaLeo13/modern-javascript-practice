@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gerador e Validador de CPF</title>
+  <link rel="stylesheet" href="../src/assets/css/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>🔐 Gerador de CPF</h1>
+    <p>Gere CPFs válidos para testes e desenvolvimento</p>
+
+    <!-- Área de exibição do CPF gerado -->
+    <div class="cpf-gerado" style="display: none;">
+      <div class="cpf-display">
+        <h2>CPF Gerado</h2>
+        <div class="cpf-number"></div>
+        <button class="btn-copy" onclick="copiarCPF()">
+          📋 Copiar CPF
+        </button>
+      </div>
+    </div>
+
+    <!-- Botão para gerar novo CPF -->
+    <button class="btn-generate" onclick="gerarNovoCPF()">
+      ✨ Gerar Novo CPF
+    </button>
+
+    <hr style="margin: 40px 0; border: none; border-top: 2px solid #e5e7eb;">
+
+    <!-- Seção de validação de CPF -->
+    <h1 style="margin-top: 20px;">✅ Validador de CPF</h1>
+    <p>Insira um CPF para validar se é válido</p>
+
+    <form>
+      <label for="cpf-input">Digite o CPF:</label>
+      <input 
+        type="text" 
+        id="cpf-input" 
+        placeholder="000.000.000-00"
+        maxlength="14"
+      >
+      <button type="submit" class="btn-validate">
+        Validar CPF
+      </button>
+    </form>
+
+    <!-- Área de resultado da validação -->
+    <div class="resultado-validacao"></div>
+  </section>
+
+  <script src="./assets/js/bundle.js"></script>
+</body>
+
+</html>
