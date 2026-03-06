@@ -26,7 +26,8 @@ function carregarElementos(json) {
     tr.appendChild(td);
 
     table.appendChild(tr);
-
+    
+    
     
 }
 

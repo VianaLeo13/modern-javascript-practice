@@ -20,12 +20,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `:root {
-  --primary-color: #2563eb;
-  --primary-color-darker: #1d4ed8;
-  --primary-color-light: #3b82f6;
+  --primary-color: #6366f1;
+  --primary-color-darker: #4f46e5;
+  --primary-color-light: #818cf8;
   --success-color: #10b981;
   --error-color: #ef4444;
   --text-dark: #1f2937;
@@ -48,7 +48,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   min-height: 100vh;
@@ -81,11 +81,19 @@ body {
 }
 
 .container h1 {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 900;
   color: var(--text-dark);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
 }
 
 .container p {
@@ -118,7 +126,7 @@ form input {
   border: 2px solid var(--border-color);
   border-radius: 10px;
   transition: all 0.3s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #f9fafb;
 }
 
@@ -138,7 +146,7 @@ form button {
   display: block;
   width: 100%;
   border: none;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-darker) 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -148,26 +156,61 @@ form button {
   border-radius: 10px;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-md);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+form button:hover::before {
+  left: 100%;
 }
 
 form button:hover {
-  background: linear-gradient(135deg, var(--primary-color-darker) 0%, #1e40af 100%);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: 0 15px 30px -5px rgba(102, 126, 234, 0.5);
+  transform: translateY(-3px);
 }
-
 form button:active {
   transform: translateY(0);
   box-shadow: var(--shadow-sm);
 }
 
 .senha-gerada{
-  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: 600;
   color: var(--primary-color);
-  margin: 40px 0;
-  text-align: center
+  margin: 30px 0;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-radius: 12px;
+  border: 2px dashed var(--primary-color-light);
+  word-break: break-word;
+  transition: all 0.3s ease;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.senha-gerada:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
 }
 
 input[type="checkbox"] {
@@ -177,18 +220,52 @@ input[type="checkbox"] {
   margin-top: 16px;
    
 }
-
-.tamanho-senha {
-  width: 50px;
-  margin-left: 10px;
-}
-
 .btn-gerar{
-  height: 40px;
-  margin-top: 20px;
-  width: 100px;
+  height: 60px;
+  margin-top: 30px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
 }
-`, "",{"version":3,"sources":["webpack://./src/assets/css/style.css"],"names":[],"mappings":"AAEA;EACE,wBAAwB;EACxB,+BAA+B;EAC/B,8BAA8B;EAC9B,wBAAwB;EACxB,sBAAsB;EACtB,oBAAoB;EACpB,qBAAqB;EACrB,uBAAuB;EACvB,4CAA4C;EAC5C,kFAAkF;EAClF,oFAAoF;EACpF,sFAAsF;AACxF;;AAEA;EACE,sBAAsB;EACtB,UAAU;EACV,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,SAAS;EACT,UAAU;EACV,6DAA6D;EAC7D,+EAA+E;EAC/E,eAAe;EACf,gBAAgB;EAChB,iBAAiB;EACjB,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,uBAAuB;AACzB;;AAEA;EACE,gBAAgB;EAChB,UAAU;EACV,iBAAiB;EACjB,mBAAmB;EACnB,aAAa;EACb,mBAAmB;EACnB,4BAA4B;EAC5B,iCAAiC;AACnC;;AAEA;EACE;IACE,UAAU;IACV,2BAA2B;EAC7B;EACA;IACE,UAAU;IACV,wBAAwB;EAC1B;AACF;;AAEA;EACE,eAAe;EACf,gBAAgB;EAChB,uBAAuB;EACvB,mBAAmB;EACnB,kBAAkB;AACpB;;AAEA;EACE,wBAAwB;EACxB,kBAAkB;EAClB,mBAAmB;EACnB,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,gBAAgB;EAChB,uBAAuB;EACvB,eAAe;AACjB;;AAEA;EACE,cAAc;EACd,WAAW;EACX,eAAe;EACf,YAAY;EACZ,eAAe;EACf,mBAAmB;EACnB,qCAAqC;EACrC,mBAAmB;EACnB,yBAAyB;EACzB,gCAAgC;EAChC,mBAAmB;AACrB;;AAEA;EACE,wCAAwC;EACxC,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,kCAAkC;EAClC,mBAAmB;EACnB,4CAA4C;AAC9C;;AAEA;EACE,cAAc;EACd,WAAW;EACX,YAAY;EACZ,8FAA8F;EAC9F,WAAW;EACX,eAAe;EACf,gBAAgB;EAChB,YAAY;EACZ,eAAe;EACf,gBAAgB;EAChB,mBAAmB;EACnB,yBAAyB;EACzB,4BAA4B;EAC5B,gCAAgC;EAChC,qBAAqB;AACvB;;AAEA;EACE,iFAAiF;EACjF,4BAA4B;EAC5B,2BAA2B;AAC7B;;AAEA;EACE,wBAAwB;EACxB,4BAA4B;AAC9B;;AAEA;EACE,cAAc;EACd,2BAA2B;EAC3B,cAAc;EACd;AACF;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB,gBAAgB;;AAElB;;AAEA;EACE,WAAW;EACX,iBAAiB;AACnB;;AAEA;EACE,YAAY;EACZ,gBAAgB;EAChB,YAAY;AACd","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');\n\n:root {\n  --primary-color: #2563eb;\n  --primary-color-darker: #1d4ed8;\n  --primary-color-light: #3b82f6;\n  --success-color: #10b981;\n  --error-color: #ef4444;\n  --text-dark: #1f2937;\n  --text-light: #6b7280;\n  --border-color: #e5e7eb;\n  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);\n}\n\n* {\n  box-sizing: border-box;\n  outline: 0;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;\n  font-size: 16px;\n  line-height: 1.6;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--text-dark);\n}\n\n.container {\n  max-width: 500px;\n  width: 90%;\n  margin: 30px auto;\n  background: #ffffff;\n  padding: 40px;\n  border-radius: 20px;\n  box-shadow: var(--shadow-xl);\n  animation: fadeInUp 0.6s ease-out;\n}\n\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n\n.container h1 {\n  font-size: 28px;\n  font-weight: 700;\n  color: var(--text-dark);\n  margin-bottom: 10px;\n  text-align: center;\n}\n\n.container p {\n  color: var(--text-light);\n  text-align: center;\n  margin-bottom: 30px;\n  font-size: 14px;\n}\n\nform {\n  width: 100%;\n}\n\nform label {\n  display: block;\n  width: 100%;\n  margin-bottom: 8px;\n  font-weight: 600;\n  color: var(--text-dark);\n  font-size: 14px;\n}\n\nform input {\n  display: block;\n  width: 100%;\n  font-size: 16px;\n  height: 50px;\n  padding: 0 16px;\n  margin-bottom: 20px;\n  border: 2px solid var(--border-color);\n  border-radius: 10px;\n  transition: all 0.3s ease;\n  font-family: 'Inter', sans-serif;\n  background: #f9fafb;\n}\n\nform input:hover {\n  border-color: var(--primary-color-light);\n  background: #ffffff;\n}\n\nform input:focus {\n  outline: none;\n  border-color: var(--primary-color);\n  background: #ffffff;\n  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);\n}\n\nform button {\n  display: block;\n  width: 100%;\n  border: none;\n  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-darker) 100%);\n  color: #fff;\n  font-size: 16px;\n  font-weight: 600;\n  height: 50px;\n  cursor: pointer;\n  margin-top: 10px;\n  border-radius: 10px;\n  transition: all 0.3s ease;\n  box-shadow: var(--shadow-md);\n  font-family: 'Inter', sans-serif;\n  letter-spacing: 0.5px;\n}\n\nform button:hover {\n  background: linear-gradient(135deg, var(--primary-color-darker) 0%, #1e40af 100%);\n  box-shadow: var(--shadow-lg);\n  transform: translateY(-2px);\n}\n\nform button:active {\n  transform: translateY(0);\n  box-shadow: var(--shadow-sm);\n}\n\n.senha-gerada{\n  font-size: 2em;\n  color: var(--primary-color);\n  margin: 40px 0;\n  text-align: center\n}\n\ninput[type=\"checkbox\"] {\n  width: 25px;\n  height: 16px;\n  margin-right: 50px;\n  margin-top: 16px;\n   \n}\n\n.tamanho-senha {\n  width: 50px;\n  margin-left: 10px;\n}\n\n.btn-gerar{\n  height: 40px;\n  margin-top: 20px;\n  width: 100px;\n}\n"],"sourceRoot":""}]);
+
+.btn-gerar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-gerar:hover::before {
+  left: 100%;
+}
+
+.btn-gerar:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-gerar:active {
+  transform: translateY(-2px) scale(1);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+}
+`, "",{"version":3,"sources":["webpack://./src/assets/css/style.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');\n\n:root {\n  --primary-color: #6366f1;\n  --primary-color-darker: #4f46e5;\n  --primary-color-light: #818cf8;\n  --success-color: #10b981;\n  --error-color: #ef4444;\n  --text-dark: #1f2937;\n  --text-light: #6b7280;\n  --border-color: #e5e7eb;\n  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);\n}\n\n* {\n  box-sizing: border-box;\n  outline: 0;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;\n  font-size: 16px;\n  line-height: 1.6;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: var(--text-dark);\n}\n\n.container {\n  max-width: 500px;\n  width: 90%;\n  margin: 30px auto;\n  background: #ffffff;\n  padding: 40px;\n  border-radius: 20px;\n  box-shadow: var(--shadow-xl);\n  animation: fadeInUp 0.6s ease-out;\n}\n\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n\n.container h1 {\n  font-size: 36px;\n  font-weight: 900;\n  color: var(--text-dark);\n  margin-bottom: 20px;\n  text-align: center;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  letter-spacing: -1px;\n  font-family: 'Space Grotesk', sans-serif;\n  text-transform: uppercase;\n  text-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);\n}\n\n.container p {\n  color: var(--text-light);\n  text-align: center;\n  margin-bottom: 30px;\n  font-size: 14px;\n}\n\nform {\n  width: 100%;\n}\n\nform label {\n  display: block;\n  width: 100%;\n  margin-bottom: 8px;\n  font-weight: 600;\n  color: var(--text-dark);\n  font-size: 14px;\n}\n\nform input {\n  display: block;\n  width: 100%;\n  font-size: 16px;\n  height: 50px;\n  padding: 0 16px;\n  margin-bottom: 20px;\n  border: 2px solid var(--border-color);\n  border-radius: 10px;\n  transition: all 0.3s ease;\n  font-family: 'Poppins', sans-serif;\n  background: #f9fafb;\n}\n\nform input:hover {\n  border-color: var(--primary-color-light);\n  background: #ffffff;\n}\n\nform input:focus {\n  outline: none;\n  border-color: var(--primary-color);\n  background: #ffffff;\n  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);\n}\n\nform button {\n  display: block;\n  width: 100%;\n  border: none;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: #fff;\n  font-size: 16px;\n  font-weight: 600;\n  height: 50px;\n  cursor: pointer;\n  margin-top: 10px;\n  border-radius: 10px;\n  transition: all 0.3s ease;\n  box-shadow: var(--shadow-md);\n  font-family: 'Space Grotesk', sans-serif;\n  letter-spacing: 0.5px;\n  text-transform: uppercase;\n  position: relative;\n  overflow: hidden;\n}\n\nform button::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: -100%;\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);\n  transition: left 0.5s;\n}\n\nform button:hover::before {\n  left: 100%;\n}\n\nform button:hover {\n  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);\n  box-shadow: 0 15px 30px -5px rgba(102, 126, 234, 0.5);\n  transform: translateY(-3px);\n}\nform button:active {\n  transform: translateY(0);\n  box-shadow: var(--shadow-sm);\n}\n\n.senha-gerada{\n  font-size: 1.5em;\n  font-weight: 600;\n  color: var(--primary-color);\n  margin: 30px 0;\n  text-align: center;\n  font-family: 'Courier New', monospace;\n  letter-spacing: 1px;\n  padding: 20px;\n  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);\n  border-radius: 12px;\n  border: 2px dashed var(--primary-color-light);\n  word-break: break-word;\n  transition: all 0.3s ease;\n  min-height: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.senha-gerada:hover {\n  transform: scale(1.02);\n  box-shadow: var(--shadow-md);\n}\n\ninput[type=\"checkbox\"] {\n  width: 25px;\n  height: 16px;\n  margin-right: 50px;\n  margin-top: 16px;\n   \n}\n.btn-gerar{\n  height: 60px;\n  margin-top: 30px;\n  width: 100%;\n  font-size: 18px;\n  font-weight: 700;\n  letter-spacing: 1.5px;\n  text-transform: uppercase;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  border: none;\n  border-radius: 14px;\n  color: white;\n  cursor: pointer;\n  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);\n  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);\n  position: relative;\n  overflow: hidden;\n  font-family: 'Space Grotesk', sans-serif;\n}\n\n.btn-gerar::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: -100%;\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);\n  transition: left 0.6s ease;\n}\n\n.btn-gerar:hover::before {\n  left: 100%;\n}\n\n.btn-gerar:hover {\n  transform: translateY(-4px) scale(1.02);\n  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);\n  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);\n}\n\n.btn-gerar:active {\n  transform: translateY(-2px) scale(1);\n  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

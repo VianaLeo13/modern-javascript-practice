@@ -3,7 +3,7 @@ const path = require('path'); //CommonJS
 
 module.exports = {
     mode: 'development',//modo de desenvolvimento
-    entry: './src/index.js', //ponto de entrada
+    entry: './src/main.js', //ponto de entrada
     output:{
         path: path.resolve(__dirname, 'public', 'assets', 'js'),
         filename: 'bundle.js'
@@ -15,7 +15,13 @@ module.exports = {
             use: {
                 loader: 'babel-loader',//loader para transpilar o código
                 
-            }
+                },
+
+               test: /\.css$/i,
+               use: ['style-loader', 'css-loader'],
+
+
+            
         }]
     },
     devtool: 'source-map',
